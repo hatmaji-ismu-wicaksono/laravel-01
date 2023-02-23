@@ -6,14 +6,11 @@ use Illuminate\View\Component;
 
 class Topnav extends Component
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public $data;
+    
+    public function __construct($param)
     {
-        //
+        $this->data = $param;
     }
 
     /**
@@ -23,6 +20,7 @@ class Topnav extends Component
      */
     public function render()
     {
-        return view('components.topnav');
+        $data = $this->data;
+        return view('components.topnav', Compact('data'));
     }
 }

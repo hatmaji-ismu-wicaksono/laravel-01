@@ -1,3 +1,9 @@
+<?php
+    $dto = [
+        'title' => 'Hello World',
+    ];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,9 +16,9 @@
 
 <body>
     <div id="app">
-        <example-component :data="$job"></example-component>
+        <example-component :param='@json($dto)'></example-component>
     </div>
-    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>
